@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willwi 陳威兒 — 歌手 · 詞曲創作 · 音樂製作人</title>
+<meta name="description" content="Taiwan-based singer-songwriter, recording artist, and music producer. Multilingual storytelling distributed worldwide.">
+<meta property="og:image" content="https://willwi.com/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0a0a0a; color:#e0e0e0; font-family:'Noto Sans TC',sans-serif; line-height:1.8; }
+h1,h2,h3 { font-family:'Playfair Display','Noto Sans TC',serif; }
+section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+img { max-width:100%; display:block; }
+
+/* Hero */
+.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%); }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(201,160,80,0.08) 0%, transparent 70%); }
+.hero-content { position:relative; z-index:1; }
+.hero h1 { font-size:clamp(3rem,8vw,7rem); font-weight:900; letter-spacing:-0.02em; color:#fff; margin-bottom:10px; }
+.hero .tagline { font-size:clamp(1rem,2vw,1.4rem); color:#c9a050; letter-spacing:0.3em; text-transform:uppercase; margin-bottom:30px; }
+.hero .album-announce { display:inline-block; border:1px solid rgba(201,160,80,0.4); padding:12px 30px; border-radius:50px; color:#c9a050; font-size:0.9rem; letter-spacing:0.2em; margin-top:20px; }
+
+/* About */
+.about { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.about img { border-radius:4px; opacity:0.9; width:100%; aspect-ratio:3/4; object-fit:cover; }
+.about h2 { font-size:2.5rem; color:#fff; margin-bottom:25px; }
+.about p { color:#a0a0a0; margin-bottom:15px; font-size:1.05rem; font-weight:300; }
+
+/* Music */
+.music h2 { font-size:2.5rem; color:#fff; text-align:center; margin-bottom:50px; }
+.album-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:30px; }
+.album-card { background:#111; border-radius:8px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.album-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.5); }
+.album-card img { width:100%; aspect-ratio:1; object-fit:cover; }
+.album-card .info { padding:18px; }
+.album-card h3 { font-size:1.1rem; color:#fff; margin-bottom:5px; }
+.album-card .meta { font-size:0.8rem; color:#777; }
+
+/* Events */
+.events h2 { font-size:2.5rem; color:#fff; text-align:center; margin-bottom:50px; }
+.event-table { width:100%; border-collapse:collapse; }
+.event-table th { text-align:left; padding:15px 10px; border-bottom:1px solid #222; color:#c9a050; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; }
+.event-table td { padding:15px 10px; border-bottom:1px solid #1a1a1a; }
+.event-table .date { color:#888; font-size:0.9rem; white-space:nowrap; }
+.event-table .venue { color:#ccc; }
+.event-table .ticket a { color:#c9a050; text-decoration:none; font-size:0.85rem; border:1px solid rgba(201,160,80,0.3); padding:6px 16px; border-radius:20px; transition:all 0.3s; }
+.event-table .ticket a:hover { background:rgba(201,160,80,0.15); }
+
+/* Newsletter */
+.newsletter { text-align:center; background:#0d0d0d; margin:60px auto; border-radius:12px; padding:60px 20px; max-width:700px; }
+.newsletter h2 { font-size:1.8rem; color:#fff; margin-bottom:15px; }
+.newsletter p { color:#777; margin-bottom:30px; }
+.newsletter form { display:flex; gap:10px; max-width:450px; margin:0 auto; }
+.newsletter input { flex:1; padding:14px 20px; background:#1a1a1a; border:1px solid #333; border-radius:30px; color:#fff; font-size:1rem; }
+.newsletter button { padding:14px 30px; background:#c9a050; color:#0a0a0a; border:none; border-radius:30px; font-weight:700; cursor:pointer; font-size:0.95rem; letter-spacing:0.05em; transition:background 0.3s; }
+.newsletter button:hover { background:#d4b368; }
+
+/* Links */
+.platform-links { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:30px 0; }
+.platform-links a { color:#888; text-decoration:none; font-size:0.8rem; letter-spacing:0.1em; transition:color 0.3s; text-transform:uppercase; }
+.platform-links a:hover { color:#c9a050; }
+
+footer { text-align:center; padding:40px 20px; color:#555; font-size:0.8rem; border-top:1px solid #111; }
+footer a { color:#888; text-decoration:none; }
+
+@media(max-width:768px) {
+  .about { grid-template-columns:1fr; gap:30px; }
+  .about img { aspect-ratio:1; max-width:300px; margin:0 auto; }
+  .album-grid { grid-template-columns:repeat(2, 1fr); gap:15px; }
+  section { padding:50px 15px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="tagline">New Album Out Now</p>
+    <h1>WILLWI</h1>
+    <p style="color:#888;font-size:1.1rem;margin-top:10px;">歌手 · 詞曲創作 · 音樂製作人</p>
+    <div class="album-announce">ACROSS THE UNIVERSE — LISTEN NOW</div>
+  </div>
+</section>
+
+<section class="about">
+  <img src="https://willwi.com/hero.jpg" alt="Willwi" onerror="this.src='https://i.scdn.co/image/ab67616d0000b2734c33b9de7a17029c4c839d82'">
+  <div>
+    <h2>About Willwi</h2>
+    <p>Willwi 的音樂存在於蒼穹與私密之間——一個內省與廣闊之美碰撞的所在。他的聲音是獨立民謠、環境質感與電影感流行的細膩融合，由一把既親密又浩瀚的聲線驅動。</p>
+    <p>每一首歌都是一段旅程——對愛、失落、以及單純「存在」這件複雜事的安靜反思。真摯、脆弱、充滿心靈。</p>
+    <p>他的現場演出更加深了這份連結，為樂迷提供一個窺探歌曲背後故事、以及承載它們的情感的親密窗口。</p>
+    <p style="color:#c9a050;">Est. 1995 &nbsp;·&nbsp; Sydney / Taipei</p>
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Stay Connected</h2>
+  <p>接收最新發行、演出訊息與創作日誌</p>
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="email" name="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="platform-links" style="margin-top:40px;">
+    <a href="https://open.spotify.com/artist/3ascZ8Rb2KDw4QyCy29Om4">Spotify</a>
+    <a href="https://music.apple.com/us/artist/willwi/1798471457">Apple Music</a>
+    <a href="https://tidal.com/artist/54856609">TIDAL</a>
+    <a href="https://www.youtube.com/@Willwi888">YouTube</a>
+    <a href="https://music.amazon.com/artists/B0DYFC8CTG">Amazon Music</a>
+    <a href="https://www.kkbox.com/tw/tc/artist/0pXOA9-SBBMNjAaaKS">KKBOX</a>
+    <a href="https://www.deezer.com/en/artist/304718241">Deezer</a>
+    <a href="https://www.instagram.com/willwi888">Instagram</a>
+    <a href="https://www.facebook.com/Willwi888">Facebook</a>
+    <a href="https://www.tiktok.com/@willwi888">TikTok</a>
+  </div>
+</section>
+
+<section class="music">
+  <h2>Music</h2>
+  <div class="album-grid" id="albums">
+    <!-- filled by JS -->
+  </div>
+  <p style="text-align:center;margin-top:40px;">
+    <a href="https://willwi-music-db-j3h8.vercel.app/" style="color:#c9a050;text-decoration:none;border:1px solid rgba(201,160,80,0.4);padding:12px 30px;border-radius:30px;font-size:0.9rem;">View Full Archive →</a>
+  </p>
+</section>
+
+<section class="events">
+  <h2>Upcoming & Past Events</h2>
+  <table class="event-table" id="events">
+    <thead><tr><th>Date</th><th>Event</th><th>Venue</th><th></th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<footer>
+  <p>© 2026 Willwi Music. All Rights Reserved.</p>
+  <p style="margin-top:10px;"><a href="mailto:will@willwi.com">will@willwi.com</a></p>
+  <p style="margin-top:20px;color:#444;">Music is more than melody — it is the voice of a story and the echo of a soul.</p>
+</footer>
+
+<script>
+// Load albums from Supabase
+(async()=>{
+  const url='https://rzxqseimxhbokrhcdjbi.supabase.co/rest/v1/songs?select=album_name,cover_url,release_date&order=release_date.desc&limit=100';
+  const key='sb_publishable_UShB9nFU7OJ6-yRkuZwnnQ_E3XW_4YE';
+  try{
+    const r=await fetch(url,{headers:{apikey:key,Authorization:'Bearer '+key}});
+    const songs=await r.json();
+    const albums={};
+    for(const s of songs){
+      const n=s.album_name;
+      if(n&&!albums[n]) albums[n]={name:n,cover:s.cover_url,date:s.release_date};
+    }
+    const grid=document.getElementById('albums');
+    grid.innerHTML=Object.values(albums).slice(0,12).map(a=>`
+      <div class="album-card" onclick="window.open('https://willwi-music-db-j3h8.vercel.app/','_blank')">
+        <img src="${a.cover}" alt="${a.name}" loading="lazy" onerror="this.src='https://i.scdn.co/image/ab67616d0000b2734c33b9de7a17029c4c839d82'">
+        <div class="info"><h3>${a.name}</h3><span class="meta">${a.date?.[0]||''}${a.date?.[1]||''}${a.date?.[2]||''}${a.date?.[3]||''}</span></div>
+      </div>`).join('');
+  }catch(e){console.log('Albums load failed',e);}
+
+  // Load events
+  try{
+    const er=await fetch('https://rzxqseimxhbokrhcdjbi.supabase.co/rest/v1/media_events?select=*&order=event_date.desc',{headers:{apikey:key,Authorization:'Bearer '+key}});
+    const events=await er.json();
+    const tbody=document.querySelector('#events tbody');
+    tbody.innerHTML=events.map(e=>`
+      <tr>
+        <td class="date">${e.event_date||''}</td>
+        <td class="venue">${e.title||''}<br><small style="color:#666">${e.type||''}</small></td>
+        <td class="venue">${e.venue||e.location||'—'}</td>
+        <td class="ticket">${e.ticket_url?`<a href="${e.ticket_url}">Details</a>`:''}</td>
+      </tr>`).join('');
+  }catch(e){console.log('Events load failed',e);}
+})();
+</script>
+</body>
+</html>
