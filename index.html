@@ -2,165 +2,150 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Willwi — 作品與紀錄</title>
-<meta name="description" content="不是為了被記得，而是為了記得。Willwi 的作品資料庫，保存、呈現、再現。">
-<meta property="og:image" content="https://willwi.com/hero.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Willwi</title>
+<meta name="description" content="不是為了被記得，而是為了記得。">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#c0c0c0;font-family:'Noto Sans TC','Helvetica Neue',sans-serif;line-height:1.9;font-weight:300}
-section{padding:100px 24px;max-width:780px;margin:0 auto}
-h1{font-weight:300;color:#fff}
-h2{font-weight:300;color:#c9a050;font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:40px}
-img{max-width:100%;display:block;border-radius:2px}
-a{color:#c9a050;text-decoration:none;transition:color 0.3s}
-a:hover{color:#d4b368}
+body{background:#0d0d0d;color:#999;font-family:'Noto Serif TC','Times New Roman',serif;font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+nav a{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.6;transition:opacity 0.3s;margin-left:32px}
+nav a:hover{opacity:1}
+nav .logo{font-size:0.72rem;letter-spacing:0.25em;margin-left:0}
 
 /* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#0d0d0d 100%)}
-.hero p{font-size:clamp(1.6rem,4vw,2.6rem);color:#fff;font-weight:300;letter-spacing:0.08em;line-height:1.6;margin-bottom:12px}
-.hero small{color:#555;font-size:0.75rem;letter-spacing:0.2em}
+.hero{height:100vh;position:relative;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.6) saturate(0.8)}
+.hero .overlay{position:absolute;bottom:60px;left:60px;right:60px}
+.hero .overlay h1{color:#fff;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;letter-spacing:0.05em;line-height:1.1}
+
+/* Sections */
+section{padding:120px 60px;max-width:1400px;margin:0 auto}
+section h2{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#c9a050;margin-bottom:50px;font-weight:400}
+section p{font-size:1rem;line-height:2;color:#888}
+
+/* Music grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px}
+.card{transition:transform 0.5s;cursor:pointer}
+.card:hover{transform:scale(1.02)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.card h3{color:#ccc;font-size:1rem;font-weight:300;margin-top:16px;letter-spacing:0.05em}
+.card span{color:#555;font-size:0.75rem;display:block;margin-top:4px}
 
 /* About */
-.about{display:grid;grid-template-columns:220px 1fr;gap:60px;align-items:start}
-.about img{width:100%;aspect-ratio:3/4;object-fit:cover;opacity:0.85;filter:grayscale(20%)}
-.about .text p{margin-bottom:28px;color:#a0a0a0;font-size:0.98rem}
-.about .text p.lead{color:#ccc;font-size:1.1rem}
-
-/* Divider */
-hr{border:none;border-top:1px solid #1a1a1a;margin:0 auto;max-width:780px}
-
-/* Archive */
-.archive-intro{margin-bottom:50px;color:#888;font-size:0.95rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;opacity:0.85}
+.about-grid .text p{margin-bottom:24px;font-size:0.95rem;color:#999}
+.about-grid .text p.lead{color:#bbb;font-size:1.05rem}
 
 /* Tiers */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
-.tier{border:1px solid #1a1a1a;padding:36px 28px;border-radius:2px}
-.tier h3{color:#fff;font-weight:300;font-size:1.05rem;margin-bottom:16px}
-.tier p{color:#777;font-size:0.85rem;line-height:1.8}
-.tier .num{color:#c9a050;font-size:0.65rem;letter-spacing:0.2em;margin-bottom:16px;display:block}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;margin-top:60px}
+.tier h3{color:#ccc;font-size:1rem;font-weight:300;margin-bottom:16px}
+.tier p{font-size:0.82rem;color:#777;line-height:1.9}
+.tier .label{color:#c9a050;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-bottom:12px}
 
-/* Music */
-.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:24px}
-.album-card{background:#0d0d0d;border-radius:2px;overflow:hidden;transition:transform 0.4s;cursor:pointer}
-.album-card:hover{transform:translateY(-3px)}
-.album-card img{width:100%;aspect-ratio:1;object-fit:cover;opacity:0.85}
-.album-card .info{padding:16px}
-.album-card h3{font-size:0.9rem;color:#ccc;font-weight:300;margin-bottom:4px}
-.album-card .meta{font-size:0.72rem;color:#555}
-
-/* Links */
-.platforms{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:40px 0}
-.platforms a{color:#555;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
-.platforms a:hover{color:#c9a050}
-
-footer{text-align:center;padding:60px 20px;color:#444;font-size:0.72rem;border-top:1px solid #111;max-width:780px;margin:0 auto}
-footer p{margin-bottom:8px}
-footer .close{color:#666;margin-top:20px;font-style:italic}
+/* Footer */
+footer{padding:100px 60px;text-align:center;max-width:1400px;margin:0 auto}
+footer .links{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:40px}
+footer .links a{color:#555;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.3s}
+footer .links a:hover{color:#c9a050}
+footer p{color:#444;font-size:0.7rem;margin-bottom:8px}
+footer .quiet{color:#555;font-style:italic;margin-top:30px}
 
 @media(max-width:768px){
-  .about{grid-template-columns:1fr}
-  .about img{max-width:200px;margin:0 auto 30px}
-  .tiers{grid-template-columns:1fr}
-  .album-grid{grid-template-columns:repeat(2,1fr);gap:16px}
-  section{padding:60px 20px}
+  nav{padding:16px 20px}
+  nav a{margin-left:16px;font-size:0.65rem}
+  .hero .overlay{bottom:30px;left:24px;right:24px}
+  section{padding:80px 24px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-grid img{max-width:300px;margin:0 auto}
+  .tiers{grid-template-columns:1fr;gap:40px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:20px}
 }
 </style>
 </head>
 <body>
 
-<main>
-  <section class="hero">
-    <div>
-      <p>不是為了被記得<br>而是為了記得</p>
-      <small>WILLWI</small>
-    </div>
-  </section>
+<nav>
+  <a href="#" class="logo">WILLWI</a>
+  <div>
+    <a href="#about">About</a>
+    <a href="#music">Music</a>
+    <a href="#archive">Archive</a>
+    <a href="mailto:will@willwi.com">Contact</a>
+  </div>
+</nav>
 
-  <section class="about">
-    <img src="hero.jpg" alt="Willwi" onerror="this.style.display='none'">
+<section class="hero">
+  <img src="hero.jpg" alt="Willwi">
+  <div class="overlay">
+    <h1>不是為了被記得<br>而是為了記得</h1>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <img src="hero.jpg" alt="">
     <div class="text">
-      <p class="lead">我一直很清楚自己不是為了即時曝光而創作的人。<br>比起被看見，我更在意的是：作品能不能被好好完成，以及在時間過去之後，它是否仍然站得住。</p>
-      <p>對我而言，音樂不是一次性的發表，而是一段段與記憶、情緒、生命狀態共同存在的紀錄。如果一首歌無法被理解、被回溯、被保存，那麼它再熱鬧，也只是短暫經過。</p>
-      <p>因此，我選擇用自己的名字創作。不是為了標示存在感，而是為了讓作品有清楚的來源，讓它在未來被再次聽見時，仍然能知道是誰完成的、為何被留下。</p>
-      <p>我經常使用不同語言創作，不是因為策略，而是因為語言本身就是情緒的一部分。有些感受，用某一種語言說不出來，就必須換一個聲音、換一個節奏，才能貼近那個當下真正的狀態。</p>
+      <p class="lead">我一直很清楚自己不是為了即時曝光而創作的人。比起被看見，我更在意的是作品能不能被好好完成，以及在時間過去之後，它是否仍然站得住。</p>
+      <p>音樂不是一次性的發表，而是一段段與記憶、情緒、生命狀態共同存在的紀錄。如果一首歌無法被理解、被回溯、被保存，那麼它再熱鬧，也只是短暫經過。</p>
       <p>完整不是更多，完整是少一點歪斜、少一點被代言、少一點被亂講。</p>
-      <p>我把這樣的態度，延伸到日常的練習與生活裡。無論是音樂，還是身體的練習，本質都是一樣的：專注、秩序、以及長期投入。</p>
-      <p>如果有一天，沒有人替我解釋我在做什麼，我希望留下來的，不是標籤，也不是話題。而是一組能被理解的作品，以及一條清楚而誠實的創作軌跡，這樣就夠了。</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <hr>
+<section id="music">
+  <h2>Music</h2>
+  <div class="grid" id="albums"></div>
+</section>
 
-  <section id="archive">
-    <h2>Archive</h2>
-    <p class="archive-intro">這裡是作品資料庫。公開顯示每首歌的標準元資料與專輯封面。沒有播放器，不提供試聽或下載。資訊本身，就是完整的呈現。</p>
-    <p class="archive-intro"><a href="https://willwi-music-db-j3h8.vercel.app/">進入資料庫 →</a></p>
-  </section>
-
-  <hr>
-
-  <section id="participate">
-    <h2>參與</h2>
-
-    <div class="tiers">
-      <div class="tier">
-        <span class="num">第一層</span>
-        <h3>公開資料庫</h3>
-        <p>所有聽眾都可看到的資訊。作品元資料、專輯封面、創作紀錄。可以立即分享，方便資訊傳播。不提供試聽或下載。</p>
-      </div>
-
-      <div class="tier">
-        <span class="num">第二層</span>
-        <h3>手工對時</h3>
-        <p>付費支持後，取得一次性密碼進入 Musixmatch 風格的動態歌詞頁面。以專輯封面為底圖，歌詞逐行運動。不是自動完成，是你陪這首歌走一段。</p>
-        <p style="margin-top:16px">NT$320 手工歌詞對時 · 可下載工作紀錄<br>
-        NT$100 純粹支持 · 無需交換條件<br>
-        NT$2,800 後台交付 · 不參與對時</p>
-      </div>
-
-      <div class="tier">
-        <span class="num">第三層</span>
-        <h3>管理系統</h3>
-        <p>作品資料維護、ISRC / UPC 核對、訂單與金流管理。創作者掌握自己的作品資料與金流，尊重各大音樂平台的播放與版權規則。</p>
-      </div>
+<section id="archive">
+  <h2>Archive</h2>
+  <p style="max-width:600px;margin-bottom:60px">這裡是作品資料庫。公開顯示每首歌的標準元資料與專輯封面。沒有播放器，不提供試聽或下載。資訊本身，就是完整的呈現。</p>
+  
+  <div class="tiers">
+    <div class="tier">
+      <span class="label">第一層</span>
+      <h3>公開資料庫</h3>
+      <p>所有聽眾都可看到的資訊。作品元資料、專輯封面、創作紀錄。可以立即分享，方便資訊傳播。</p>
     </div>
-
-    <p style="margin-top:60px;color:#666;font-size:0.85rem;text-align:center">
-      關於這裡：歌詞需要手工對時，不是因為做不到自動，而是因為有些歌不該被自動完成。<br>
-      這裡沒有再來一次，也沒有修到完美。你現在做的就是最後的樣子。<br>
-      你可以下載你完成的影片，那是你陪這首歌走過的紀錄。<br>
-      歌曲與歌詞的權利仍屬原創者，這裡不是授權也不是買賣。
-    </p>
-  </section>
-
-  <hr>
-
-  <section id="music">
-    <h2>作品</h2>
-    <div class="album-grid" id="albums"></div>
-    <p style="text-align:center;margin-top:50px">
-      <a href="https://willwi-music-db-j3h8.vercel.app/" style="border:1px solid rgba(201,160,80,0.2);padding:10px 28px;border-radius:2px;font-size:0.82rem;letter-spacing:0.1em;color:#c9a050">完整資料庫</a>
-    </p>
-  </section>
-
-  <footer>
-    <div class="platforms">
-      <a href="https://open.spotify.com/artist/3ascZ8Rb2KDw4QyCy29Om4">Spotify</a>
-      <a href="https://music.apple.com/us/artist/willwi/1798471457">Apple Music</a>
-      <a href="https://tidal.com/artist/54856609">TIDAL</a>
-      <a href="https://www.youtube.com/@Willwi888">YouTube</a>
-      <a href="https://music.amazon.com/artists/B0DYFC8CTG">Amazon</a>
-      <a href="https://www.kkbox.com/tw/tc/artist/0pXOA9-SBBMNjAaaKS">KKBOX</a>
-      <a href="https://www.deezer.com/en/artist/304718241">Deezer</a>
-      <a href="https://www.instagram.com/willwi888">Instagram</a>
-      <a href="https://www.facebook.com/Willwi888">Facebook</a>
+    <div class="tier">
+      <span class="label">第二層</span>
+      <h3>手工對時</h3>
+      <p>付費支持後，取得一次性密碼進入動態歌詞頁面。歌詞逐行運動。不是自動完成，是你陪這首歌走一段。</p>
     </div>
-    <p><a href="mailto:will@willwi.com">will@willwi.com</a></p>
-    <p>© Willwi Music</p>
-    <p class="close">若有任何留下，只是溫柔的回響，而不是必須。</p>
-  </footer>
-</main>
+    <div class="tier">
+      <span class="label">第三層</span>
+      <h3>管理系統</h3>
+      <p>作品資料維護、ISRC / UPC 核對、訂單與金流管理。創作者掌握自己的作品與金流。</p>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:80px">
+    <a href="https://willwi-music-db-j3h8.vercel.app/" style="border:1px solid rgba(201,160,80,0.2);padding:12px 36px;font-size:0.78rem;letter-spacing:0.15em;color:#c9a050;transition:background 0.3s" onmouseover="this.style.background='rgba(201,160,80,0.08)'" onmouseout="this.style.background='none'">進入資料庫</a>
+  </p>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://open.spotify.com/artist/3ascZ8Rb2KDw4QyCy29Om4">Spotify</a>
+    <a href="https://music.apple.com/us/artist/willwi/1798471457">Apple Music</a>
+    <a href="https://tidal.com/artist/54856609">TIDAL</a>
+    <a href="https://www.youtube.com/@Willwi888">YouTube</a>
+    <a href="https://music.amazon.com/artists/B0DYFC8CTG">Amazon</a>
+    <a href="https://www.kkbox.com/tw/tc/artist/0pXOA9-SBBMNjAaaKS">KKBOX</a>
+    <a href="https://www.deezer.com/en/artist/304718241">Deezer</a>
+    <a href="https://www.instagram.com/willwi888">Instagram</a>
+    <a href="https://www.facebook.com/Willwi888">Facebook</a>
+  </div>
+  <p><a href="mailto:will@willwi.com">will@willwi.com</a></p>
+  <p>© Willwi Music</p>
+  <p class="quiet">若有任何留下，只是溫柔的回響，而不是必須。</p>
+</footer>
 
 <script>
 (async()=>{
@@ -174,10 +159,11 @@ footer .close{color:#666;margin-top:20px;font-style:italic}
       const n=s.album_name;
       if(n&&!albums[n]) albums[n]={name:n,cover:s.cover_url,date:s.release_date};
     }
-    document.getElementById('albums').innerHTML=Object.values(albums).slice(0,18).map(a=>`
-      <div class="album-card" onclick="window.open('https://willwi-music-db-j3h8.vercel.app/','_blank')">
+    document.getElementById('albums').innerHTML=Object.values(albums).slice(0,12).map(a=>`
+      <div class="card" onclick="window.open('https://willwi-music-db-j3h8.vercel.app/','_blank')">
         <img src="${a.cover}" alt="${a.name}" loading="lazy" onerror="this.style.display='none'">
-        <div class="info"><h3>${a.name}</h3><span class="meta">${(a.date||'')[0]||''}${(a.date||'')[1]||''}${(a.date||'')[2]||''}${(a.date||'')[3]||''}</span></div>
+        <h3>${a.name}</h3>
+        <span>${(a.date||'')[0]||''}${(a.date||'')[1]||''}${(a.date||'')[2]||''}${(a.date||'')[3]||''}</span>
       </div>`).join('');
   }catch(e){}
 })();
