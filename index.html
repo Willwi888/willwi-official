@@ -3,146 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Willwi 陳威兒 — 歌手 · 詞曲創作 · 音樂製作人</title>
-<meta name="description" content="Taiwan-based singer-songwriter, recording artist, and music producer. Multilingual storytelling distributed worldwide.">
+<title>Willwi — 作品與紀錄</title>
+<meta name="description" content="不是為了被記得，而是為了記得。Willwi 的作品資料庫，保存、呈現、再現。">
 <meta property="og:image" content="https://willwi.com/hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { background:#0a0a0a; color:#e0e0e0; font-family:'Noto Sans TC',sans-serif; line-height:1.8; }
-h1,h2,h3 { font-family:'Playfair Display','Noto Sans TC',serif; }
-section { padding:80px 20px; max-width:1100px; margin:0 auto; }
-img { max-width:100%; display:block; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#c0c0c0;font-family:'Noto Sans TC','Helvetica Neue',sans-serif;line-height:1.9;font-weight:300}
+section{padding:100px 24px;max-width:780px;margin:0 auto}
+h1{font-weight:300;color:#fff}
+h2{font-weight:300;color:#c9a050;font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:40px}
+img{max-width:100%;display:block;border-radius:2px}
+a{color:#c9a050;text-decoration:none;transition:color 0.3s}
+a:hover{color:#d4b368}
 
 /* Hero */
-.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%); }
-.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(201,160,80,0.08) 0%, transparent 70%); }
-.hero-content { position:relative; z-index:1; }
-.hero h1 { font-size:clamp(3rem,8vw,7rem); font-weight:900; letter-spacing:-0.02em; color:#fff; margin-bottom:10px; }
-.hero .tagline { font-size:clamp(1rem,2vw,1.4rem); color:#c9a050; letter-spacing:0.3em; text-transform:uppercase; margin-bottom:30px; }
-.hero .album-announce { display:inline-block; border:1px solid rgba(201,160,80,0.4); padding:12px 30px; border-radius:50px; color:#c9a050; font-size:0.9rem; letter-spacing:0.2em; margin-top:20px; }
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#0d0d0d 100%)}
+.hero p{font-size:clamp(1.6rem,4vw,2.6rem);color:#fff;font-weight:300;letter-spacing:0.08em;line-height:1.6;margin-bottom:12px}
+.hero small{color:#555;font-size:0.75rem;letter-spacing:0.2em}
 
 /* About */
-.about { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-.about img { border-radius:4px; opacity:0.9; width:100%; aspect-ratio:3/4; object-fit:cover; }
-.about h2 { font-size:2.5rem; color:#fff; margin-bottom:25px; }
-.about p { color:#a0a0a0; margin-bottom:15px; font-size:1.05rem; font-weight:300; }
+.about{display:grid;grid-template-columns:220px 1fr;gap:60px;align-items:start}
+.about img{width:100%;aspect-ratio:3/4;object-fit:cover;opacity:0.85;filter:grayscale(20%)}
+.about .text p{margin-bottom:28px;color:#a0a0a0;font-size:0.98rem}
+.about .text p.lead{color:#ccc;font-size:1.1rem}
+
+/* Divider */
+hr{border:none;border-top:1px solid #1a1a1a;margin:0 auto;max-width:780px}
+
+/* Archive */
+.archive-intro{margin-bottom:50px;color:#888;font-size:0.95rem}
+
+/* Tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+.tier{border:1px solid #1a1a1a;padding:36px 28px;border-radius:2px}
+.tier h3{color:#fff;font-weight:300;font-size:1.05rem;margin-bottom:16px}
+.tier p{color:#777;font-size:0.85rem;line-height:1.8}
+.tier .num{color:#c9a050;font-size:0.65rem;letter-spacing:0.2em;margin-bottom:16px;display:block}
 
 /* Music */
-.music h2 { font-size:2.5rem; color:#fff; text-align:center; margin-bottom:50px; }
-.album-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:30px; }
-.album-card { background:#111; border-radius:8px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; }
-.album-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.5); }
-.album-card img { width:100%; aspect-ratio:1; object-fit:cover; }
-.album-card .info { padding:18px; }
-.album-card h3 { font-size:1.1rem; color:#fff; margin-bottom:5px; }
-.album-card .meta { font-size:0.8rem; color:#777; }
-
-/* Events */
-.events h2 { font-size:2.5rem; color:#fff; text-align:center; margin-bottom:50px; }
-.event-table { width:100%; border-collapse:collapse; }
-.event-table th { text-align:left; padding:15px 10px; border-bottom:1px solid #222; color:#c9a050; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; }
-.event-table td { padding:15px 10px; border-bottom:1px solid #1a1a1a; }
-.event-table .date { color:#888; font-size:0.9rem; white-space:nowrap; }
-.event-table .venue { color:#ccc; }
-.event-table .ticket a { color:#c9a050; text-decoration:none; font-size:0.85rem; border:1px solid rgba(201,160,80,0.3); padding:6px 16px; border-radius:20px; transition:all 0.3s; }
-.event-table .ticket a:hover { background:rgba(201,160,80,0.15); }
-
-/* Newsletter */
-.newsletter { text-align:center; background:#0d0d0d; margin:60px auto; border-radius:12px; padding:60px 20px; max-width:700px; }
-.newsletter h2 { font-size:1.8rem; color:#fff; margin-bottom:15px; }
-.newsletter p { color:#777; margin-bottom:30px; }
-.newsletter form { display:flex; gap:10px; max-width:450px; margin:0 auto; }
-.newsletter input { flex:1; padding:14px 20px; background:#1a1a1a; border:1px solid #333; border-radius:30px; color:#fff; font-size:1rem; }
-.newsletter button { padding:14px 30px; background:#c9a050; color:#0a0a0a; border:none; border-radius:30px; font-weight:700; cursor:pointer; font-size:0.95rem; letter-spacing:0.05em; transition:background 0.3s; }
-.newsletter button:hover { background:#d4b368; }
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:24px}
+.album-card{background:#0d0d0d;border-radius:2px;overflow:hidden;transition:transform 0.4s;cursor:pointer}
+.album-card:hover{transform:translateY(-3px)}
+.album-card img{width:100%;aspect-ratio:1;object-fit:cover;opacity:0.85}
+.album-card .info{padding:16px}
+.album-card h3{font-size:0.9rem;color:#ccc;font-weight:300;margin-bottom:4px}
+.album-card .meta{font-size:0.72rem;color:#555}
 
 /* Links */
-.platform-links { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:30px 0; }
-.platform-links a { color:#888; text-decoration:none; font-size:0.8rem; letter-spacing:0.1em; transition:color 0.3s; text-transform:uppercase; }
-.platform-links a:hover { color:#c9a050; }
+.platforms{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:40px 0}
+.platforms a{color:#555;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
+.platforms a:hover{color:#c9a050}
 
-footer { text-align:center; padding:40px 20px; color:#555; font-size:0.8rem; border-top:1px solid #111; }
-footer a { color:#888; text-decoration:none; }
+footer{text-align:center;padding:60px 20px;color:#444;font-size:0.72rem;border-top:1px solid #111;max-width:780px;margin:0 auto}
+footer p{margin-bottom:8px}
+footer .close{color:#666;margin-top:20px;font-style:italic}
 
-@media(max-width:768px) {
-  .about { grid-template-columns:1fr; gap:30px; }
-  .about img { aspect-ratio:1; max-width:300px; margin:0 auto; }
-  .album-grid { grid-template-columns:repeat(2, 1fr); gap:15px; }
-  section { padding:50px 15px; }
+@media(max-width:768px){
+  .about{grid-template-columns:1fr}
+  .about img{max-width:200px;margin:0 auto 30px}
+  .tiers{grid-template-columns:1fr}
+  .album-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  section{padding:60px 20px}
 }
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-content">
-    <p class="tagline">New Album Out Now</p>
-    <h1>WILLWI</h1>
-    <p style="color:#888;font-size:1.1rem;margin-top:10px;">歌手 · 詞曲創作 · 音樂製作人</p>
-    <div class="album-announce">ACROSS THE UNIVERSE — LISTEN NOW</div>
-  </div>
-</section>
+<main>
+  <section class="hero">
+    <div>
+      <p>不是為了被記得<br>而是為了記得</p>
+      <small>WILLWI</small>
+    </div>
+  </section>
 
-<section class="about">
-  <img src="hero.jpg" alt="Willwi" onerror="this.style.display='none'">
-  <div>
-    <h2>About Willwi</h2>
-    <p>Willwi 的音樂存在於蒼穹與私密之間——一個內省與廣闊之美碰撞的所在。他的聲音是獨立民謠、環境質感與電影感流行的細膩融合，由一把既親密又浩瀚的聲線驅動。</p>
-    <p>每一首歌都是一段旅程——對愛、失落、以及單純「存在」這件複雜事的安靜反思。真摯、脆弱、充滿心靈。</p>
-    <p>他的現場演出更加深了這份連結，為樂迷提供一個窺探歌曲背後故事、以及承載它們的情感的親密窗口。</p>
-    <p style="color:#c9a050;">Est. 1995 &nbsp;·&nbsp; Sydney / Taipei</p>
-  </div>
-</section>
+  <section class="about">
+    <img src="hero.jpg" alt="Willwi" onerror="this.style.display='none'">
+    <div class="text">
+      <p class="lead">我一直很清楚自己不是為了即時曝光而創作的人。<br>比起被看見，我更在意的是：作品能不能被好好完成，以及在時間過去之後，它是否仍然站得住。</p>
+      <p>對我而言，音樂不是一次性的發表，而是一段段與記憶、情緒、生命狀態共同存在的紀錄。如果一首歌無法被理解、被回溯、被保存，那麼它再熱鬧，也只是短暫經過。</p>
+      <p>因此，我選擇用自己的名字創作。不是為了標示存在感，而是為了讓作品有清楚的來源，讓它在未來被再次聽見時，仍然能知道是誰完成的、為何被留下。</p>
+      <p>我經常使用不同語言創作，不是因為策略，而是因為語言本身就是情緒的一部分。有些感受，用某一種語言說不出來，就必須換一個聲音、換一個節奏，才能貼近那個當下真正的狀態。</p>
+      <p>完整不是更多，完整是少一點歪斜、少一點被代言、少一點被亂講。</p>
+      <p>我把這樣的態度，延伸到日常的練習與生活裡。無論是音樂，還是身體的練習，本質都是一樣的：專注、秩序、以及長期投入。</p>
+      <p>如果有一天，沒有人替我解釋我在做什麼，我希望留下來的，不是標籤，也不是話題。而是一組能被理解的作品，以及一條清楚而誠實的創作軌跡，這樣就夠了。</p>
+    </div>
+  </section>
 
-<section class="newsletter">
-  <h2>Stay Connected</h2>
-  <p>接收最新發行、演出訊息與創作日誌</p>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <div class="platform-links" style="margin-top:40px;">
-    <a href="https://open.spotify.com/artist/3ascZ8Rb2KDw4QyCy29Om4">Spotify</a>
-    <a href="https://music.apple.com/us/artist/willwi/1798471457">Apple Music</a>
-    <a href="https://tidal.com/artist/54856609">TIDAL</a>
-    <a href="https://www.youtube.com/@Willwi888">YouTube</a>
-    <a href="https://music.amazon.com/artists/B0DYFC8CTG">Amazon Music</a>
-    <a href="https://www.kkbox.com/tw/tc/artist/0pXOA9-SBBMNjAaaKS">KKBOX</a>
-    <a href="https://www.deezer.com/en/artist/304718241">Deezer</a>
-    <a href="https://www.instagram.com/willwi888">Instagram</a>
-    <a href="https://www.facebook.com/Willwi888">Facebook</a>
-    <a href="https://www.tiktok.com/@willwi888">TikTok</a>
-  </div>
-</section>
+  <hr>
 
-<section class="music">
-  <h2>Music</h2>
-  <div class="album-grid" id="albums">
-    <!-- filled by JS -->
-  </div>
-  <p style="text-align:center;margin-top:40px;">
-    <a href="https://willwi-music-db-j3h8.vercel.app/" style="color:#c9a050;text-decoration:none;border:1px solid rgba(201,160,80,0.4);padding:12px 30px;border-radius:30px;font-size:0.9rem;">View Full Archive →</a>
-  </p>
-</section>
+  <section id="archive">
+    <h2>Archive</h2>
+    <p class="archive-intro">這裡是作品資料庫。公開顯示每首歌的標準元資料與專輯封面。沒有播放器，不提供試聽或下載。資訊本身，就是完整的呈現。</p>
+    <p class="archive-intro"><a href="https://willwi-music-db-j3h8.vercel.app/">進入資料庫 →</a></p>
+  </section>
 
-<section class="events">
-  <h2>Upcoming & Past Events</h2>
-  <table class="event-table" id="events">
-    <thead><tr><th>Date</th><th>Event</th><th>Venue</th><th></th></tr></thead>
-    <tbody></tbody>
-  </table>
-</section>
+  <hr>
 
-<footer>
-  <p>© 2026 Willwi Music. All Rights Reserved.</p>
-  <p style="margin-top:10px;"><a href="mailto:will@willwi.com">will@willwi.com</a></p>
-  <p style="margin-top:20px;color:#444;">Music is more than melody — it is the voice of a story and the echo of a soul.</p>
-</footer>
+  <section id="participate">
+    <h2>參與</h2>
+
+    <div class="tiers">
+      <div class="tier">
+        <span class="num">第一層</span>
+        <h3>公開資料庫</h3>
+        <p>所有聽眾都可看到的資訊。作品元資料、專輯封面、創作紀錄。可以立即分享，方便資訊傳播。不提供試聽或下載。</p>
+      </div>
+
+      <div class="tier">
+        <span class="num">第二層</span>
+        <h3>手工對時</h3>
+        <p>付費支持後，取得一次性密碼進入 Musixmatch 風格的動態歌詞頁面。以專輯封面為底圖，歌詞逐行運動。不是自動完成，是你陪這首歌走一段。</p>
+        <p style="margin-top:16px">NT$320 手工歌詞對時 · 可下載工作紀錄<br>
+        NT$100 純粹支持 · 無需交換條件<br>
+        NT$2,800 後台交付 · 不參與對時</p>
+      </div>
+
+      <div class="tier">
+        <span class="num">第三層</span>
+        <h3>管理系統</h3>
+        <p>作品資料維護、ISRC / UPC 核對、訂單與金流管理。創作者掌握自己的作品資料與金流，尊重各大音樂平台的播放與版權規則。</p>
+      </div>
+    </div>
+
+    <p style="margin-top:60px;color:#666;font-size:0.85rem;text-align:center">
+      關於這裡：歌詞需要手工對時，不是因為做不到自動，而是因為有些歌不該被自動完成。<br>
+      這裡沒有再來一次，也沒有修到完美。你現在做的就是最後的樣子。<br>
+      你可以下載你完成的影片，那是你陪這首歌走過的紀錄。<br>
+      歌曲與歌詞的權利仍屬原創者，這裡不是授權也不是買賣。
+    </p>
+  </section>
+
+  <hr>
+
+  <section id="music">
+    <h2>作品</h2>
+    <div class="album-grid" id="albums"></div>
+    <p style="text-align:center;margin-top:50px">
+      <a href="https://willwi-music-db-j3h8.vercel.app/" style="border:1px solid rgba(201,160,80,0.2);padding:10px 28px;border-radius:2px;font-size:0.82rem;letter-spacing:0.1em;color:#c9a050">完整資料庫</a>
+    </p>
+  </section>
+
+  <footer>
+    <div class="platforms">
+      <a href="https://open.spotify.com/artist/3ascZ8Rb2KDw4QyCy29Om4">Spotify</a>
+      <a href="https://music.apple.com/us/artist/willwi/1798471457">Apple Music</a>
+      <a href="https://tidal.com/artist/54856609">TIDAL</a>
+      <a href="https://www.youtube.com/@Willwi888">YouTube</a>
+      <a href="https://music.amazon.com/artists/B0DYFC8CTG">Amazon</a>
+      <a href="https://www.kkbox.com/tw/tc/artist/0pXOA9-SBBMNjAaaKS">KKBOX</a>
+      <a href="https://www.deezer.com/en/artist/304718241">Deezer</a>
+      <a href="https://www.instagram.com/willwi888">Instagram</a>
+      <a href="https://www.facebook.com/Willwi888">Facebook</a>
+    </div>
+    <p><a href="mailto:will@willwi.com">will@willwi.com</a></p>
+    <p>© Willwi Music</p>
+    <p class="close">若有任何留下，只是溫柔的回響，而不是必須。</p>
+  </footer>
+</main>
 
 <script>
-// Load albums from Supabase
 (async()=>{
   const url='https://rzxqseimxhbokrhcdjbi.supabase.co/rest/v1/songs?select=album_name,cover_url,release_date&order=release_date.desc&limit=100';
   const key='sb_publishable_UShB9nFU7OJ6-yRkuZwnnQ_E3XW_4YE';
@@ -154,29 +174,13 @@ footer a { color:#888; text-decoration:none; }
       const n=s.album_name;
       if(n&&!albums[n]) albums[n]={name:n,cover:s.cover_url,date:s.release_date};
     }
-    const grid=document.getElementById('albums');
-    grid.innerHTML=Object.values(albums).slice(0,12).map(a=>`
+    document.getElementById('albums').innerHTML=Object.values(albums).slice(0,18).map(a=>`
       <div class="album-card" onclick="window.open('https://willwi-music-db-j3h8.vercel.app/','_blank')">
-        <img src="${a.cover}" alt="${a.name}" loading="lazy" onerror="this.src='https://i.scdn.co/image/ab67616d0000b2734c33b9de7a17029c4c839d82'">
-        <div class="info"><h3>${a.name}</h3><span class="meta">${a.date?.[0]||''}${a.date?.[1]||''}${a.date?.[2]||''}${a.date?.[3]||''}</span></div>
+        <img src="${a.cover}" alt="${a.name}" loading="lazy" onerror="this.style.display='none'">
+        <div class="info"><h3>${a.name}</h3><span class="meta">${(a.date||'')[0]||''}${(a.date||'')[1]||''}${(a.date||'')[2]||''}${(a.date||'')[3]||''}</span></div>
       </div>`).join('');
-  }catch(e){console.log('Albums load failed',e);}
-
-  // Load events
-  try{
-    const er=await fetch('https://rzxqseimxhbokrhcdjbi.supabase.co/rest/v1/media_events?select=*&order=event_date.desc',{headers:{apikey:key,Authorization:'Bearer '+key}});
-    const events=await er.json();
-    const tbody=document.querySelector('#events tbody');
-    tbody.innerHTML=events.map(e=>`
-      <tr>
-        <td class="date">${e.event_date||''}</td>
-        <td class="venue">${e.title||''}<br><small style="color:#666">${e.type||''}</small></td>
-        <td class="venue">${e.venue||e.location||'—'}</td>
-        <td class="ticket">${e.ticket_url?`<a href="${e.ticket_url}">Details</a>`:''}</td>
-      </tr>`).join('');
-  }catch(e){console.log('Events load failed',e);}
+  }catch(e){}
 })();
 </script>
 </body>
 </html>
- 
