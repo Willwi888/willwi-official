@@ -319,7 +319,7 @@ footer .quiet{color:#555;font-style:italic;margin-top:30px}
   const url='https://rzxqseimxhbokrhcdjbi.supabase.co/rest/v1/songs?select=album_name,cover_url,release_date&order=release_date.desc&limit=100';
   const key='sb_publishable_UShB9nFU7OJ6-yRkuZwnnQ_E3XW_4YE';
   try{
-    const r=await fetch(url,{headers:{apikey:key,Au...arer '+key}});
+    const r=await fetch(url,{headers:{apikey:key}});
     const songs=await r.json();
     const albums={};
     for(const s of songs){
